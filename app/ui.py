@@ -107,6 +107,10 @@ p, label, li, .stMarkdown, .stCaption, .stText,
   font-size: 1.2rem !important;
 }
 
+[data-testid="stFileUploaderDropzone"] {
+  min-height: 340px !important;
+}
+
 /* Sidebar collapse/expand arrow -- make it as visible as the rest of the
    sidebar chrome, both while the sidebar is open (stSidebarCollapseButton)
    and after it has been collapsed (stSidebarCollapsedControl). */
