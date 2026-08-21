@@ -83,7 +83,7 @@ body::before {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.08;
+  opacity: 0.12;
   background-repeat: repeat;
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='340'%20height='170'%3E%3Ctext%20x='10'%20y='100'%20font-family='Times%20New%20Roman,serif'%20font-size='24'%20fill='%232c4a63'%20transform='rotate(-28%20170%2085)'%3EZiqi%20(Ankit)%20Cao%3C/text%3E%3C/svg%3E");
 }
