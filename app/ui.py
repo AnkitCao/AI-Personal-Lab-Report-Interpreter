@@ -157,7 +157,7 @@ p, label, li, .stMarkdown, .stCaption, .stText,
    caption (this version has no "Drag and drop file here" text of its
    own) so the enlarged area reads as one deliberate control. */
 [data-testid="stFileUploaderDropzone"] {
-  min-height: 340px !important;
+  min-height: 170px !important;
   align-items: center !important;
   justify-content: flex-start !important;
   padding-left: 2rem !important;
