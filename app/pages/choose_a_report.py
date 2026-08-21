@@ -428,5 +428,6 @@ with tab_upload:
             st.caption(
                 "Drop a report to extract tests, values, units, and ranges. "
                 "Status (HIGH / LOW / NORMAL) is computed here from the "
-                "file's own reference ranges."
+                "file's own reference ranges, or a curated published range "
+                "for recognized tests when the file doesn't include one."
             )
