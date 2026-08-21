@@ -193,7 +193,7 @@ p, label, li, .stMarkdown, .stCaption, .stText,
 
 [data-testid="stFileUploaderDropzoneInstructions"] span {
   line-height: 1.1 !important;
-  font-size: 1.3rem !important;
+  font-size: 1.05rem !important;
   font-weight: 400 !important;
 }
 
@@ -201,7 +201,7 @@ p, label, li, .stMarkdown, .stCaption, .stText,
   content: "Click or drag a file here to upload";
   display: block;
   font-family: "Times New Roman", Times, "Libre Baskerville", serif;
-  font-size: 1.3rem;
+  font-size: 1.05rem;
   font-weight: 400;
   line-height: 1.1;
   color: #2c4a63;

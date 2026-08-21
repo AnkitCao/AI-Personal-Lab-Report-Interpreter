@@ -273,6 +273,32 @@ with tab_search:
                         _search_cell(title, header=True)
 
                 pick_prefix = f"mimic_pick_{hash(table_sig)}_{page}_"
+
+                # Enforce single-select *before* the checkboxes below are
+                # instantiated this run -- mutating a widget's
+                # session_state key after it's already been created raises
+                # StreamlitAPIException, so this has to happen first, not
+                # via a post-hoc st.rerun().
+                prev_key = f"{pick_prefix}checked"
+                prev_checked = st.session_state.get(prev_key, [])
+                pre_checked = [
+                    i
+                    for i in range(len(page_df))
+                    if st.session_state.get(f"{pick_prefix}{i}", False)
+                ]
+                if len(pre_checked) > 1:
+                    newly = [i for i in pre_checked if i not in prev_checked]
+                    keep = int(newly[-1] if newly else pre_checked[0])
+                    for i in pre_checked:
+                        if i != keep:
+                            st.session_state[f"{pick_prefix}{i}"] = False
+                    st.session_state["_mimic_multi_check_warn"] = True
+
+                if st.session_state.pop("_mimic_multi_check_warn", False):
+                    st.warning(
+                        "You can only select one patient to view results."
+                    )
+
                 checked: list[int] = []
                 for i, row in page_df.iterrows():
                     i = int(i)
@@ -299,22 +325,7 @@ with tab_search:
                         with col:
                             _search_cell(value)
 
-                prev_key = f"{pick_prefix}checked"
-                prev_checked = st.session_state.get(prev_key, [])
-                if len(checked) > 1:
-                    newly = [i for i in checked if i not in prev_checked]
-                    keep = int(newly[-1] if newly else checked[0])
-                    for i in checked:
-                        if i != keep:
-                            st.session_state[f"{pick_prefix}{i}"] = False
-                    st.session_state[prev_key] = [keep]
-                    st.session_state["_mimic_multi_check_warn"] = True
-                    st.rerun()
                 st.session_state[prev_key] = checked
-                if st.session_state.pop("_mimic_multi_check_warn", False):
-                    st.warning(
-                        "You can only select one patient to view results."
-                    )
                 if n_pages > 1:
                     prev_col, info_col, next_col = st.columns([1, 2, 1])
                     with prev_col:
