@@ -14,7 +14,16 @@ The AI Summary and Lifestyle and Doctor Questions pages need an OpenAI key, desc
 
 ## How status is computed
 
-Every result's status is computed before anything reaches the language model, and the model never decides it. The reference range used is the one printed on the report itself when present. When a recognized test is missing its own range, the app falls back to a curated range cited to a public source such as MedlinePlus Medical Encyclopedia or Cleveland Clinic, listed in `app/utils/curated_ranges.py`.
+Status is HIGH, LOW, or NORMAL, showing whether a result falls above, below, or inside its reference range. Every result's status is computed before anything reaches the language model, and the model never decides it. The reference range used is the one printed on the report itself when present. When a recognized test is missing its own range, the app falls back to a curated range cited to a public source, listed in `app/utils/curated_ranges.py`.
+
+| Source | Tests covered |
+| --- | --- |
+| MedlinePlus Medical Encyclopedia, Comprehensive metabolic panel | Glucose, Sodium, Potassium, Urea Nitrogen, Creatinine, Total Calcium, Albumin, Total Bilirubin |
+| Cleveland Clinic, Complete Blood Count | Hematocrit, Hemoglobin, Red Blood Cells, White Blood Cells, Platelet Count |
+| MedlinePlus, Cholesterol Levels | Triglycerides, Total Cholesterol, LDL Cholesterol Calculated, LDL Cholesterol Measured |
+| MedlinePlus Medical Encyclopedia, A1C test | Hemoglobin A1c |
+| Healthline, Medical News Today, UMass Memorial Health library | Cholesterol Ratio |
+| MIMIC IV, matched from non blank HDL rows in this sample | HDL Cholesterol |
 
 ## What this repo contains
 
