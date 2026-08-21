@@ -145,6 +145,10 @@ p, label, li, .stMarkdown, .stCaption, .stText,
   padding: 0.6rem 1.2rem !important;
 }
 
+/* Two Streamlit selectbox implementations have shipped over time: an
+   older BaseWeb one ([data-baseweb="select"], a plain value div) and a
+   newer React Aria combobox (a real <input> plus a [role="option"] list
+   rendered in a portal). Cover both. */
 [data-testid="stSelectbox"] [data-baseweb="select"] > div:first-child {
   min-height: 3rem !important;
   display: flex !important;
@@ -152,9 +156,11 @@ p, label, li, .stMarkdown, .stCaption, .stText,
 }
 
 [data-testid="stSelectbox"] [data-baseweb="select"],
+[data-testid="stSelectbox"] input,
 [data-baseweb="popover"] [role="option"],
 [data-baseweb="menu"] [role="option"],
-ul[data-baseweb="menu"] li {
+ul[data-baseweb="menu"] li,
+[role="option"] {
   font-size: 1.35rem !important;
 }
 
@@ -471,11 +477,17 @@ div.stButton > button[data-testid="baseButton-secondary"] {
   color: #2c4a63 !important;
 }
 
-[data-baseweb="tab-list"] {
+/* Two Streamlit tab implementations have shipped over time: an older
+   BaseWeb one (data-baseweb="tab"/"tab-list") and a newer React Aria one
+   (data-testid="stTab", role="tablist"). Cover both so the tab labels
+   stay large and evenly spaced regardless of which version is deployed. */
+[data-baseweb="tab-list"],
+[role="tablist"] {
   gap: 2.25rem !important;
 }
 
-[data-baseweb="tab"] {
+[data-baseweb="tab"],
+[data-testid="stTab"] {
   font-size: 2.05rem !important;
   font-weight: 700 !important;
   padding: 0.75rem 0.85rem !important;
@@ -486,7 +498,9 @@ div.stButton > button[data-testid="baseButton-secondary"] {
 [data-baseweb="tab"] span,
 button[data-baseweb="tab"],
 .stTabs [data-baseweb="tab"] *,
-[data-testid="stMarkdownContainer"] [data-baseweb="tab"] {
+[data-testid="stMarkdownContainer"] [data-baseweb="tab"],
+[data-testid="stTab"] p,
+[data-testid="stTab"] span {
   font-size: 2.05rem !important;
   font-weight: 700 !important;
 }
