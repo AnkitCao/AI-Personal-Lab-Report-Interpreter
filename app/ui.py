@@ -6,6 +6,7 @@ import hashlib
 import html
 import uuid
 from contextlib import contextmanager
+from datetime import date
 from pathlib import Path
 
 import pandas as pd
@@ -82,9 +83,35 @@ body::before {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.08;
   background-repeat: repeat;
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='340'%20height='170'%3E%3Ctext%20x='10'%20y='100'%20font-family='Times%20New%20Roman,serif'%20font-size='24'%20fill='%232c4a63'%20transform='rotate(-28%20170%2085)'%3EZiqi%20(Ankit)%20Cao%3C/text%3E%3C/svg%3E");
+}
+
+/* Fixed name/date/LinkedIn badge, top-right on every page -- sits just
+   below Streamlit's own toolbar icons (Share/GitHub/menu) so it never
+   overlaps them. */
+.corner-badge {
+  position: fixed;
+  top: 3.35rem;
+  right: 1rem;
+  z-index: 999999;
+  font-family: "Times New Roman", Times, "Libre Baskerville", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #2c4a63;
+  text-align: right;
+  background: rgba(231, 240, 247, 0.95);
+  border: 1px solid #c5d9eb;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  pointer-events: auto;
+}
+
+.corner-badge a {
+  color: #3d6b8c;
+  text-decoration: underline;
 }
 
 p, label, li, .stMarkdown, .stCaption, .stText,
@@ -121,15 +148,24 @@ p, label, li, .stMarkdown, .stCaption, .stText,
   font-size: 1.2rem !important;
 }
 
+/* The deployed Streamlit version renders this as a compact single
+   "Upload" button plus a small "200MB per file..." caption, laid out as
+   a flex row with align-items:flex-start -- which left everything
+   pinned to the top-left corner of the taller box, with a big dead
+   patch of empty space to the right and below. Force the row to wrap
+   and center as a group instead, and add a headline line above the
+   caption (this version has no "Drag and drop file here" text of its
+   own) so the enlarged area reads as one deliberate control. */
 [data-testid="stFileUploaderDropzone"] {
   min-height: 340px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  row-gap: 0.6rem !important;
 }
 
-/* Scale the dropzone's icon/text/button up along with the taller box
-   above, so the enlarged area doesn't look like a small control floating
-   in empty space. */
 [data-testid="stFileUploaderDropzone"] [data-testid="stIconMaterial"] {
-  font-size: 2.6rem !important;
+  font-size: 2.8rem !important;
 }
 
 [data-testid="stFileUploaderDropzone"] span {
@@ -141,8 +177,25 @@ p, label, li, .stMarkdown, .stCaption, .stText,
 }
 
 [data-testid="stFileUploaderDropzone"] button {
-  font-size: 1.3rem !important;
-  padding: 0.6rem 1.2rem !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  padding: 0.75rem 1.5rem !important;
+}
+
+[data-testid="stFileUploaderDropzoneInstructions"] {
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+[data-testid="stFileUploaderDropzoneInstructions"]::before {
+  content: "Click or drag a file here to upload";
+  display: block;
+  font-family: "Times New Roman", Times, "Libre Baskerville", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c4a63;
+  margin-bottom: 0.2rem;
 }
 
 /* Two Streamlit selectbox implementations have shipped over time: an
@@ -619,6 +672,13 @@ def prepare_page(*, home: bool = False) -> None:
 
 def apply_theme() -> None:
     st.markdown(THEME_CSS, unsafe_allow_html=True)
+    st.markdown(
+        '<div class="corner-badge">Ziqi (Ankit) Cao &middot; '
+        f"{date.today().isoformat()} &middot; "
+        '<a href="https://www.linkedin.com/in/ziqi-ankit-cao" '
+        'target="_blank" rel="noopener noreferrer">LinkedIn</a></div>',
+        unsafe_allow_html=True,
+    )
 
 
 def init_session_state() -> None:
