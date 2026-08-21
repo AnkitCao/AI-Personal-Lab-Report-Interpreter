@@ -6,11 +6,19 @@ Try it live at https://ai-personal-lab-report-interpreter1.streamlit.app, no ins
 
 ## Using the app
 
-The home page gives three ways to pick a report. Three Patients' Demo offers three curated synthetic patients, one all normal, one with a mild A1C, one with high lipids, as one click walkthroughs. Search Sample Database by id lets you search and filter the full 100 patient synthetic database by id, gender, age, panel, or lab pattern. Upload Your Report lets you drop your own report in PDF, PNG, JPG, JPEG, or CSV format, and it gets parsed the same way as the built in samples.
+Start on the home page. It offers three ways to load a report.
 
-From there each report moves through three pages. Extracted Results shows every test, value, unit, and reference range, with a computed HIGH, LOW, or NORMAL status and where that status's range came from. AI Summary sends one OpenAI request that turns the flagged results into a plain language summary, and labels each finding as coming from the curated reference database or the model's general knowledge. Lifestyle and Doctor Questions gives lifestyle suggestions and questions to bring to a doctor, generated from that same request.
+1. **Three Patients' Demo.** Three curated synthetic patients, one all normal, one with a mild A1C, one with high lipids, set up as one click walkthroughs.
+2. **Search Sample Database by id.** Search and filter the full 100 patient synthetic database by id, gender, age, panel, or lab pattern.
+3. **Upload Your Report.** Drop your own report in PDF, PNG, JPG, JPEG, or CSV format. It gets parsed the same way as the built in samples.
 
-The AI Summary and Lifestyle and Doctor Questions pages need an OpenAI key, described below. Extracted Results does not.
+Once a report is loaded, it moves through three pages.
+
+1. **Extracted Results.** Every test, value, unit, and reference range, with a computed HIGH, LOW, or NORMAL status and where that status's range came from.
+2. **AI Summary.** One OpenAI request turns the flagged results into a plain language summary. Each finding is labeled as coming from the curated reference database or the model's general knowledge.
+3. **Lifestyle and Doctor Questions.** Lifestyle suggestions and questions to bring to a doctor, generated from that same request.
+
+AI Summary and Lifestyle and Doctor Questions need an OpenAI key. Extracted Results does not.
 
 ## How status is computed
 
@@ -27,7 +35,10 @@ Status is HIGH, LOW, or NORMAL, showing whether a result falls above, below, or 
 
 ## What this repo contains
 
-`Data Extraction` holds the SQLite database the app reads from, `health_interpreter.db`, plus the scripts used to build a database from raw lab data. `EDA` holds the exploratory analysis script and the charts it produces. `app` holds the Streamlit application, the page code, the SQL layer, the report parsers, and the OpenAI integration. `Usage 3 Try Samples` holds fictional sample lab reports, not real patient data, used to test the upload feature.
+- `Data Extraction`. The SQLite database the app reads from, `health_interpreter.db`, plus the scripts used to build a database from raw lab data.
+- `EDA`. The exploratory analysis script and the charts it produces.
+- `app`. The Streamlit application, the page code, the SQL layer, the report parsers, and the OpenAI integration.
+- `Usage 3 Try Samples`. Fictional sample lab reports, not real patient data, used to test the upload feature.
 
 ## About the demo data
 
