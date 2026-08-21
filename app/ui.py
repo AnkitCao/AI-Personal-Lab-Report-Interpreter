@@ -200,7 +200,7 @@ p, label, li, .stMarkdown, .stCaption, .stText,
   display: block;
   font-family: "Times New Roman", Times, "Libre Baskerville", serif;
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.1;
   color: #2c4a63;
   margin-bottom: 0.1rem;
