@@ -100,6 +100,21 @@ p, label, li, .stMarkdown, .stCaption, .stText,
   padding-bottom: 0.1rem !important;
 }
 
+[data-testid="stSliderThumbValue"],
+[data-testid="stSliderTickBarMin"],
+[data-testid="stSliderTickBarMax"],
+[data-testid="stTextInput"] input {
+  font-size: 1.2rem !important;
+}
+
+/* Sidebar collapse/expand arrow -- make it as visible as the rest of the
+   sidebar chrome, both while the sidebar is open (stSidebarCollapseButton)
+   and after it has been collapsed (stSidebarCollapsedControl). */
+[data-testid="stSidebarCollapseButton"] [data-testid="stIconMaterial"],
+[data-testid="stSidebarCollapsedControl"] [data-testid="stIconMaterial"] {
+  font-size: 2rem !important;
+}
+
 [data-testid="stHeader"] {
   background: rgba(245, 248, 251, 0.85);
 }

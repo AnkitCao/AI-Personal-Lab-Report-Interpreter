@@ -118,14 +118,17 @@ with tab_demo:
                 if meta is None:
                     st.error("Encounter missing from the database.")
                     continue
+                gender = html.escape(str(meta["gender"]))
+                age = html.escape(str(meta["anchor_age"]))
+                labs = html.escape(str(meta["lab_record_count"]))
+                biomarkers = html.escape(str(meta["biomarker_count"]))
                 st.markdown(
                     f'<div class="demo-card">'
                     f"<h4>{demo['scenario']}</h4>"
                     f'<p class="muted">Abnormal results</p>'
                     f'<p class="count">{int(meta["abnormal_result_count"])}</p>'
-                    f'<p class="muted">{meta["gender"]} / {meta["anchor_age"]} · '
-                    f"{meta['lab_record_count']} labs / "
-                    f"{meta['biomarker_count']} biomarkers</p>"
+                    f'<p class="muted">Gender: {gender}, Age: {age}<br>'
+                    f"Labs: {labs}, Biomarkers: {biomarkers}</p>"
                     f'<p class="muted">{demo["notes"]}</p>'
                     f"</div>",
                     unsafe_allow_html=True,
@@ -375,6 +378,7 @@ with tab_upload:
             type=UPLOAD_TYPES,
             accept_multiple_files=False,
             key="home_upload",
+            label_visibility="collapsed",
         )
         outcome = ingest_uploaded_file(uploaded) if uploaded is not None else None
         labs = None
