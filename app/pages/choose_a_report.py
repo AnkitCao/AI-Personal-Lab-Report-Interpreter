@@ -426,7 +426,6 @@ with tab_upload:
                 st.switch_page(PAGE_EXTRACTED)
         elif uploaded is None:
             st.caption(
-                "Drop a report to extract tests, values, units, and ranges. "
                 "Status (HIGH / LOW / NORMAL) is computed here from your "
                 "file's reference ranges, or a curated published range from "
                 "MedlinePlus Medical Encyclopedia, Cleveland Clinic, or "
