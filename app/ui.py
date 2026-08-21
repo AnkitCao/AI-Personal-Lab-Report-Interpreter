@@ -111,12 +111,50 @@ p, label, li, .stMarkdown, .stCaption, .stText,
   min-height: 340px !important;
 }
 
+/* Scale the dropzone's icon/text/button up along with the taller box
+   above, so the enlarged area doesn't look like a small control floating
+   in empty space. */
+[data-testid="stFileUploaderDropzone"] [data-testid="stIconMaterial"] {
+  font-size: 2.6rem !important;
+}
+
+[data-testid="stFileUploaderDropzone"] span {
+  font-size: 1.4rem !important;
+}
+
+[data-testid="stFileUploaderDropzone"] small {
+  font-size: 1.1rem !important;
+}
+
+[data-testid="stFileUploaderDropzone"] button {
+  font-size: 1.3rem !important;
+  padding: 0.6rem 1.2rem !important;
+}
+
+[data-testid="stSelectbox"] [data-baseweb="select"],
+[data-baseweb="popover"] [role="option"],
+[data-baseweb="menu"] [role="option"],
+ul[data-baseweb="menu"] li {
+  font-size: 2rem !important;
+}
+
 /* Sidebar collapse/expand arrow -- make it as visible as the rest of the
    sidebar chrome, both while the sidebar is open (stSidebarCollapseButton)
-   and after it has been collapsed (stSidebarCollapsedControl). */
+   and after it has been collapsed (stSidebarCollapsedControl). Streamlit
+   fades this button in only on hover by default (via opacity on some
+   versions, visibility:hidden on others); force it fully visible at all
+   times on both mechanisms. */
 [data-testid="stSidebarCollapseButton"] [data-testid="stIconMaterial"],
 [data-testid="stSidebarCollapsedControl"] [data-testid="stIconMaterial"] {
   font-size: 2rem !important;
+}
+
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stSidebarCollapseButton"] *,
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stSidebarCollapsedControl"] * {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 [data-testid="stHeader"] {
@@ -413,8 +451,12 @@ div.stButton > button[data-testid="baseButton-secondary"] {
   color: #2c4a63 !important;
 }
 
+[data-baseweb="tab-list"] {
+  gap: 2.25rem !important;
+}
+
 [data-baseweb="tab"] {
-  font-size: 1.85rem !important;
+  font-size: 2.05rem !important;
   font-weight: 700 !important;
   padding: 0.75rem 0.85rem !important;
   color: #2c4a63 !important;
@@ -425,7 +467,7 @@ div.stButton > button[data-testid="baseButton-secondary"] {
 button[data-baseweb="tab"],
 .stTabs [data-baseweb="tab"] *,
 [data-testid="stMarkdownContainer"] [data-baseweb="tab"] {
-  font-size: 1.85rem !important;
+  font-size: 2.05rem !important;
   font-weight: 700 !important;
 }
 
