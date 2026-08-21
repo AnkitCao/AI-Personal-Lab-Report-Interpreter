@@ -40,7 +40,7 @@ st.markdown(
 st.caption(
     "All demo data in this app is a synthetic lab-report sample I built for "
     "demonstration purposes: 100 fictional patients, 100 encounters, and "
-    "1,300 lab results. It is not derived from any real patient records."
+    "1,300 lab results."
 )
 
 

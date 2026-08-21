@@ -946,7 +946,7 @@ def _session_card_is_idle() -> bool:
 
 
 def _session_meta_lines(meta: dict) -> str:
-    """Shared Session body: name space value; multi-values use English commas."""
+    """Shared Session body: label: value; multi-values use English commas."""
     gender = html.escape(str(meta.get("gender") or "—"))
     age = html.escape(str(meta.get("anchor_age") if meta.get("anchor_age") is not None else "—"))
     panels = html.escape(panels_label(meta) or "—")
@@ -954,21 +954,21 @@ def _session_meta_lines(meta: dict) -> str:
     biomarkers = html.escape(str(meta.get("biomarker_count", "—")))
     abnormal = html.escape(str(meta.get("abnormal_result_count", "—")))
     return (
-        f"Gender {gender}, Age {age}<br>"
-        f"Panels {panels}<br>"
-        f"Labs {labs}, Biomarkers {biomarkers}, Abnormal {abnormal}"
+        f"Gender: {gender}, Age: {age}<br>"
+        f"Panels: {panels}<br>"
+        f"Labs: {labs}, Biomarkers: {biomarkers}, Abnormal: {abnormal}"
     )
 
 
 def _render_idle_session_card() -> None:
     st.markdown(
         '<div class="session-card">'
-        "<p>Patient id —<br>"
-        "Encounter id —</p>"
+        "<p>Patient id: —<br>"
+        "Encounter id: —</p>"
         '<p class="muted">'
-        "Gender —, Age —<br>"
-        "Panels —<br>"
-        "Labs —, Biomarkers —, Abnormal —</p>"
+        "Gender: —, Age: —<br>"
+        "Panels: —<br>"
+        "Labs: —, Biomarkers: —, Abnormal: —</p>"
         "</div>",
         unsafe_allow_html=True,
     )
@@ -979,8 +979,8 @@ def _render_id_session_card(meta: dict) -> None:
     hid = html.escape(str(meta["hadm_id"]))
     st.markdown(
         f'<div class="session-card">'
-        f"<p>Patient id {sid}<br>"
-        f"Encounter id {hid}</p>"
+        f"<p>Patient id: {sid}<br>"
+        f"Encounter id: {hid}</p>"
         f'<p class="muted">{_session_meta_lines(meta)}</p>'
         f"</div>",
         unsafe_allow_html=True,
@@ -992,8 +992,8 @@ def _render_upload_session_card(meta: dict) -> None:
     dob = html.escape(str(meta.get("dob") or "").strip() or "—")
     st.markdown(
         f'<div class="session-card">'
-        f"<p>Name {name}<br>"
-        f"DOB {dob}</p>"
+        f"<p>Name: {name}<br>"
+        f"DOB: {dob}</p>"
         f'<p class="muted">{_session_meta_lines(meta)}</p>'
         f"</div>",
         unsafe_allow_html=True,
