@@ -159,7 +159,8 @@ p, label, li, .stMarkdown, .stCaption, .stText,
 [data-testid="stFileUploaderDropzone"] {
   min-height: 340px !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
+  padding-left: 2rem !important;
   flex-wrap: wrap !important;
   row-gap: 0.6rem !important;
 }
@@ -184,8 +185,8 @@ p, label, li, .stMarkdown, .stCaption, .stText,
 
 [data-testid="stFileUploaderDropzoneInstructions"] {
   flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
+  align-items: flex-start !important;
+  text-align: left !important;
 }
 
 [data-testid="stFileUploaderDropzoneInstructions"]::before {
