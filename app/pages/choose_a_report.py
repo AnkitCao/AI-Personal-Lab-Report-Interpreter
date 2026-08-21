@@ -427,7 +427,9 @@ with tab_upload:
         elif uploaded is None:
             st.caption(
                 "Drop a report to extract tests, values, units, and ranges. "
-                "Status (HIGH / LOW / NORMAL) is computed here from the "
-                "file's own reference ranges, or a curated published range "
-                "for recognized tests when the file doesn't include one."
+                "Status (HIGH / LOW / NORMAL) is computed here from your "
+                "file's reference ranges, or a curated published range from "
+                "MedlinePlus Medical Encyclopedia, Cleveland Clinic, or "
+                "similar public sources for recognized tests when the file "
+                "doesn't include one."
             )
