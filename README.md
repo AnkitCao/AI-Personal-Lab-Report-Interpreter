@@ -8,7 +8,7 @@ Built for MSBA 6461: Advanced AI for Natural Language Processing, Summer 2026.
 
 - `1. Data Extraction/` — scripts that sample and clean the MIMIC-IV lab data and build the SQLite database the app reads from.
 - `2. EDA/` — the exploratory analysis script and the charts it produces.
-- `3. App/` — the Streamlit application: page code, the SQL layer, the report parsers, and the OpenAI integration.
+- `App/` — the Streamlit application: page code, the SQL layer, the report parsers, and the OpenAI integration.
 - `4. Usage 3 Try Samples/` — fictional sample lab reports (not real patient data) used to test the upload feature.
 
 ## What this repo does not contain
