@@ -2,6 +2,7 @@
 __pycache__/
 *.pyc
 *.db
+!1. Data Extraction/health_interpreter.db
 .streamlit/secrets.toml
 .DS_Store
 

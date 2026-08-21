@@ -5,6 +5,12 @@ Queries: Project_Specification.md Section 21
 Functions: Section 19.1
 
 Does not read 0. Data Resources (raw MIMIC CSVs).
+
+NOTE (public deployment): health_interpreter.db in this repo is a
+hand-built SYNTHETIC dataset -- not derived from MIMIC-IV or any
+PhysioNet-credentialed source. subject_id / hadm_id below intentionally
+use the 900xx / 901xx range so they can never be confused with real
+MIMIC ids. See README.md for details.
 """
 
 from __future__ import annotations
@@ -18,23 +24,23 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = PROJECT_ROOT / "1. Data Extraction" / "health_interpreter.db"
 
 # Classroom walkthroughs: outpatient-checkup shape, not ICU extremes.
-# Picked from real app_encounters rows with full 4-panel coverage.
+# Synthetic demo patients (see NOTE above) -- not real MIMIC subject_ids.
 CURATED_DEMOS = [
     {
-        "subject_id": 17689026,
-        "hadm_id": 21978998,
+        "subject_id": 90001,
+        "hadm_id": 90101,
         "scenario": "Patient 1 - All Normal",
         "notes": "Clean annual-checkup walkthrough. No HIGH or LOW results.",
     },
     {
-        "subject_id": 10749718,
-        "hadm_id": 28366444,
+        "subject_id": 90002,
+        "hadm_id": 90102,
         "scenario": "Patient 2 - Mild A1C",
         "notes": "A1C 6.3% and glucose 122 mg/dL — a typical first-look report.",
     },
     {
-        "subject_id": 11201977,
-        "hadm_id": 28675357,
+        "subject_id": 90003,
+        "hadm_id": 90103,
         "scenario": "Patient 3 - High Lipids",
         "notes": "A1C, LDL, cholesterol, triglycerides, and glucose above range.",
     },
