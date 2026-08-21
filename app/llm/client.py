@@ -194,7 +194,7 @@ def call_openai(system_prompt: str, user_prompt: str) -> dict:
             raise
         except AuthenticationError:
             raise LLMError(
-                "The OpenAI API key looks invalid. Check 3. App/.env "
+                "The OpenAI API key looks invalid. Check app/.env "
                 "(do not share that file) and try again."
             ) from None
         except RETRYABLE as exc:

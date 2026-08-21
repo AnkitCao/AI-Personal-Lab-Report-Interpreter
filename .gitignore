@@ -2,12 +2,12 @@
 __pycache__/
 *.pyc
 *.db
-!1. Data Extraction/health_interpreter.db
+!Data Extraction/health_interpreter.db
 .streamlit/secrets.toml
 .DS_Store
 
 # Raw / derived MIMIC-IV data (PhysioNet credentialed access required; never redistribute)
-0. Data Resources/
+Data Resources/
 *.xlsx
 
 # Large local-only files, not meant for the repo

@@ -1,6 +1,6 @@
 """Deterministic HIGH / LOW / NORMAL rules (Section 19.5).
 
-Mirrors the SQL CASE in 1. Data Extraction/build_database.py so uploaded
+Mirrors the SQL CASE in Data Extraction/build_database.py so uploaded
 rows never touch SQLite but still get identical status labels.
 """
 

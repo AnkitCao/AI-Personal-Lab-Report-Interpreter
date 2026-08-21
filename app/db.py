@@ -1,10 +1,10 @@
 """SQLite access for demo-patient screens (Phase 1).
 
-Database: 1. Data Extraction/health_interpreter.db
+Database: Data Extraction/health_interpreter.db
 Queries: Project_Specification.md Section 21
 Functions: Section 19.1
 
-Does not read 0. Data Resources (raw MIMIC CSVs).
+Does not read Data Resources (raw MIMIC CSVs).
 
 NOTE (public deployment): health_interpreter.db in this repo is a
 hand-built SYNTHETIC dataset -- not derived from MIMIC-IV or any
@@ -21,7 +21,7 @@ import pandas as pd
 import sqlite3
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DB_PATH = PROJECT_ROOT / "1. Data Extraction" / "health_interpreter.db"
+DB_PATH = PROJECT_ROOT / "Data Extraction" / "health_interpreter.db"
 
 # Classroom walkthroughs: outpatient-checkup shape, not ICU extremes.
 # Synthetic demo patients (see NOTE above) -- not real MIMIC subject_ids.
@@ -82,7 +82,7 @@ def get_connection() -> sqlite3.Connection:
     if not DB_PATH.exists():
         raise FileNotFoundError(
             f"Database not found at {DB_PATH}. "
-            "Expected '1. Data Extraction/health_interpreter.db' next to the App/ folder."
+            "Expected 'Data Extraction/health_interpreter.db' next to the app/ folder."
         )
 
     uri = DB_PATH.resolve().as_uri() + "?mode=ro"

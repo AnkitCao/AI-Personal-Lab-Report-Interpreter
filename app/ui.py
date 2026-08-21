@@ -1338,7 +1338,7 @@ def render_generate_button(*, after_page: str | None = None) -> None:
             use_container_width=True,
         )
         st.caption(
-            "Add OPENAI_API_KEY to 3. App/.env to enable AI summary. "
+            "Add OPENAI_API_KEY to app/.env to enable AI summary. "
             "Extracted results above do not need a key."
         )
         return

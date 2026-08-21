@@ -1,4 +1,4 @@
-"""Load OpenAI settings from 3. App/.env (Section 19.9).
+"""Load OpenAI settings from app/.env (Section 19.9).
 
 Never log or print the API key.
 """
@@ -29,7 +29,7 @@ def get_openai_settings() -> tuple[str, str]:
     api_key = (os.getenv("OPENAI_API_KEY") or "").strip()
     if not api_key:
         raise ConfigError(
-            "OPENAI_API_KEY is not set. Create 3. App/.env with "
+            "OPENAI_API_KEY is not set. Create app/.env with "
             "OPENAI_API_KEY=... (see .env.example). The Generate AI Summary "
             "button stays disabled until a key is present."
         )
