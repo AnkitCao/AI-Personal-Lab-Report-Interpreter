@@ -187,6 +187,12 @@ p, label, li, .stMarkdown, .stCaption, .stText,
   flex-direction: column !important;
   align-items: flex-start !important;
   text-align: left !important;
+  line-height: 1.1 !important;
+  row-gap: 0 !important;
+}
+
+[data-testid="stFileUploaderDropzoneInstructions"] span {
+  line-height: 1.1 !important;
 }
 
 [data-testid="stFileUploaderDropzoneInstructions"]::before {
@@ -195,8 +201,9 @@ p, label, li, .stMarkdown, .stCaption, .stText,
   font-family: "Times New Roman", Times, "Libre Baskerville", serif;
   font-size: 1.3rem;
   font-weight: 700;
+  line-height: 1.1;
   color: #2c4a63;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1rem;
 }
 
 /* Two Streamlit selectbox implementations have shipped over time: an
