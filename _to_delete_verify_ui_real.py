@@ -50,21 +50,6 @@ div, input, textarea, button, select,
   font-family: "Times New Roman", Times, "Libre Baskerville", serif !important;
 }
 
-/* The broad rule above also caught Streamlit's Material Symbols icon font
-   (used by the sidebar collapse arrow, the file-uploader icon, expander
-   arrows, etc.) -- Times New Roman has no glyph for those ligatures, so
-   the browser fell back to printing the raw icon name as text (e.g.
-   "keyboard_double_arrow_right", "upload"). Restore the icon font for
-   anything that is actually an icon, so those render as glyphs again. */
-[data-testid="stIconMaterial"],
-[data-testid="stIconMaterial"] *,
-.material-symbols-rounded,
-.material-symbols-outlined,
-[class*="material-symbols"] {
-  font-family: "Material Symbols Rounded", "Material Symbols Outlined",
-    "Material Icons" !important;
-}
-
 html, body, .stApp {
   font-size: 20px;
 }

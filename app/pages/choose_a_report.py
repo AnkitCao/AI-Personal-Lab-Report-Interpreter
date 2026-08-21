@@ -1,4 +1,4 @@
-"""Start: choose a demo, search MIMIC, or upload a report."""
+"""Start: choose a demo, search the sample database, or upload a report."""
 
 from __future__ import annotations
 
@@ -38,8 +38,9 @@ st.markdown(
     unsafe_allow_html=True,
 )
 st.caption(
-    "All demo data comes from the MIMIC-IV Clinical Database (PhysioNet) lab sample: "
-    "499 patients, 500 encounters, and 75,503 lab results."
+    "All demo data in this app is a synthetic lab-report sample I built for "
+    "demonstration purposes: 100 fictional patients, 100 encounters, and "
+    "1,300 lab results. It is not derived from any real patient records."
 )
 
 
@@ -92,7 +93,7 @@ def _search_cell(text, *, header: bool = False) -> None:
 tab_demo, tab_search, tab_upload = st.tabs(
     [
         "Three Patients' Demo",
-        "Search MIMIC Database by id",
+        "Search Sample Database by id",
         "Upload Your Report",
     ]
 )
@@ -143,9 +144,9 @@ with tab_search:
         """
         <div class="section-head">
           <span class="badge">2</span>
-          <h2>Search MIMIC Database by id</h2>
+          <h2>Search Sample Database by id</h2>
           <span class="contains-tag">database</span>
-          <p class="muted">Search the full MIMIC sample by id, then narrow by gender, age, panel, or lab pattern.</p>
+          <p class="muted">Search the full sample database by id, then narrow by gender, age, panel, or lab pattern.</p>
         </div>
         """,
         unsafe_allow_html=True,
@@ -157,7 +158,7 @@ with tab_search:
         else:
             search = st.text_input(
                 "Filter by patient id or encounter id",
-                placeholder="e.g. 17689026 or 21978998",
+                placeholder="e.g. 90001 or 90101",
             )
             f1, f2, f3 = st.columns(3, gap="small")
             with f1:
