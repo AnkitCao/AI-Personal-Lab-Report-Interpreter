@@ -1,8 +1,6 @@
 # AI Personal Lab Report Interpreter
 
-A prototype that reads a patient's lab report, computes which results are high, low, or normal from reference ranges, and uses a language model to turn the flagged results into a plain language summary, lifestyle suggestions, and questions to bring to a doctor.
-
-Built for MSBA 6461, Advanced AI for Natural Language Processing, Summer 2026.
+A tool that reads a patient's lab report, computes which results are high, low, or normal against reference ranges, and uses a language model to turn the flagged results into a plain language summary, lifestyle suggestions, and questions to bring to a doctor.
 
 Try it live at https://ai-personal-lab-report-interpreter1.streamlit.app, no install needed.
 
@@ -26,7 +24,7 @@ Every result's status is computed before anything reaches the language model, an
 
 `Data Extraction/health_interpreter.db` is a hand built synthetic dataset, 100 fictional patients, 100 encounters, and 1,300 lab results. It is not derived from MIMIC IV or any PhysioNet credentialed source, which is why it's safe to ship in this public repo and deploy without a data use agreement. `subject_id` and `hadm_id` values intentionally use the 900xx and 901xx range so they're never confused with real MIMIC ids.
 
-`Data Extraction/build_database.py` and `extract_labevents_sample.py` are the original scripts written against the real MIMIC IV Clinical Database during earlier coursework. They expect raw MIMIC CSVs, which require completing PhysioNet's credentialing process and are not included or redistributed here, and are kept only for reference. You don't need them to run the app against the synthetic database already in the repo.
+`Data Extraction/build_database.py` and `extract_labevents_sample.py` are the original pipeline scripts, written against the real MIMIC IV Clinical Database. They expect raw MIMIC CSVs, which require completing PhysioNet's credentialing process and are not included or redistributed here, and are kept only for reference. You don't need them to run the app against the synthetic database already in the repo.
 
 ## Running it locally
 
