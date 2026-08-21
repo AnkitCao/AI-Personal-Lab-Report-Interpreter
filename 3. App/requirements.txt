@@ -1,0 +1,7 @@
+streamlit>=1.38
+pandas>=2.2
+openai>=1.40
+python-dotenv>=1.0
+pdfplumber>=0.11
+pypdf>=5.0
+pillow>=10,<12

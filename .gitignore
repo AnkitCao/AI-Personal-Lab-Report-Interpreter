@@ -1,0 +1,19 @@
+.env
+__pycache__/
+*.pyc
+*.db
+.streamlit/secrets.toml
+.DS_Store
+
+# Raw / derived MIMIC-IV data (PhysioNet credentialed access required; never redistribute)
+0. Data Resources/
+*.xlsx
+
+# Large local-only files, not meant for the repo
+*.mp4
+*.mov
+AI Personal Lab Report Interpreter Report.docx
+
+# OS / editor junk
+.Rhistory
+.vscode/

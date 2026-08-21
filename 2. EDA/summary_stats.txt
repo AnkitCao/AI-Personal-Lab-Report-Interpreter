@@ -1,0 +1,117 @@
+=== app_lab_results: shape ===
+75503 rows x 18 columns
+
+=== value_num: overall descriptive stats ===
+count    75503.000000
+mean        53.708542
+std         86.374719
+min          0.000000
+25%          4.100000
+50%         10.300000
+75%         89.000000
+max       2517.000000
+
+=== rows per lab_group ===
+lab_group
+METABOLIC    43700
+CBC          29938
+LIPID         1526
+A1C            339
+
+=== rows per test_name ===
+test_name
+Potassium                        7047
+Sodium                           6969
+Creatinine                       6792
+Urea Nitrogen                    6765
+Glucose                          6727
+Hematocrit                       6167
+Platelet Count                   6078
+Total Calcium                    6026
+Hemoglobin                       5925
+Red Blood Cells                  5892
+White Blood Cells                5876
+Total Bilirubin                  2225
+Albumin                          1149
+Triglycerides                     533
+Hemoglobin A1c                    339
+Total Cholesterol                 258
+HDL Cholesterol                   240
+Cholesterol Ratio (Total/HDL)     239
+LDL Cholesterol - Calculated      234
+LDL Cholesterol - Measured         22
+
+=== status distribution ===
+status
+NORMAL     34382
+LOW        24233
+HIGH       16501
+UNKNOWN      387
+
+=== value_num descriptive stats, per test_name ===
+                                count        mean         std     min     25%     50%     75%      max
+test_name                                                                                             
+Albumin                        1149.0    3.057180    0.672385    1.20    2.60    3.00    3.50     5.50
+Cholesterol Ratio (Total/HDL)   239.0    3.994979    1.993765    1.60    2.80    3.50    4.60    17.70
+Creatinine                     6792.0    1.558333    2.063979    0.10    0.70    1.00    1.70    38.30
+Glucose                        6727.0  145.134978   84.088630   21.00  102.00  124.00  166.00  2517.00
+HDL Cholesterol                 240.0   45.237500   16.776585   11.00   34.75   44.50   53.00    95.00
+Hematocrit                     6167.0   29.238803    6.221471   11.10   24.40   28.00   33.10    61.10
+Hemoglobin                     5925.0    9.545738    2.119860    3.60    7.90    9.00   10.90    18.00
+Hemoglobin A1c                  339.0    6.584956    1.678663    4.60    5.50    6.00    7.20    14.30
+LDL Cholesterol - Calculated    234.0   89.132479   43.068012   10.00   59.00   80.50  111.00   260.00
+LDL Cholesterol - Measured       22.0   99.318182   61.187757    4.00   71.25   86.50  103.00   256.00
+Platelet Count                 6078.0  212.862784  137.076073    5.00  110.00  199.00  295.00   934.00
+Potassium                      7047.0    4.156563    0.585468    1.60    3.80    4.10    4.50     9.90
+Red Blood Cells                5892.0    3.223941    0.739076    1.08    2.64    3.09    3.69     6.53
+Sodium                         6969.0  137.882623    5.287514  105.00  135.00  138.00  141.00   163.00
+Total Bilirubin                2225.0    3.950966    8.408719    0.00    0.40    0.70    2.10    46.90
+Total Calcium                  6026.0    8.615898    0.870394    3.30    8.10    8.60    9.10    18.80
+Total Cholesterol               258.0  158.015504   56.783223   12.00  118.00  153.00  190.75   385.00
+Triglycerides                   533.0  203.103189  183.626589   28.00   90.00  141.00  247.00  1699.00
+Urea Nitrogen                  6765.0   31.619217   24.786376    2.00   14.00   23.00   42.00   195.00
+White Blood Cells              5876.0   10.920490   10.194592    0.10    6.00    8.90   13.00   145.40
+
+=== app_encounters: shape ===
+500 rows x 13 columns
+
+=== patient gender distribution (one row per encounter) ===
+gender
+M    294
+F    206
+
+=== anchor_age descriptive stats ===
+count    500.000000
+mean      61.722000
+std       15.999271
+min       20.000000
+25%       52.000000
+50%       63.000000
+75%       74.000000
+max       91.000000
+
+=== lab_record_count per encounter: descriptive stats ===
+count     500.000000
+mean      151.006000
+std       250.862236
+min        12.000000
+25%        35.000000
+50%        74.500000
+75%       155.750000
+max      3057.000000
+
+=== abnormal_result_count per encounter: descriptive stats ===
+count     500.000000
+mean       81.468000
+std       164.504043
+min         0.000000
+25%        10.000000
+50%        31.500000
+75%        78.250000
+max      2029.000000
+
+=== how many encounters have each panel ===
+has_cbc: 500 / 500
+has_metabolic: 500 / 500
+has_lipid: 338 / 500
+has_a1c: 334 / 500

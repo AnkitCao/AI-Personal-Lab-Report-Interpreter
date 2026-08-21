@@ -1,0 +1,20 @@
+Patient Name,DOB,Sex,Panel,Test,Result,Units,Reference Range,Flag
+Jordan Rivera,1994-03-12,F,Comprehensive Metabolic Panel,Glucose,118,mg/dL,70 - 99,HIGH
+Jordan Rivera,1994-03-12,F,Comprehensive Metabolic Panel,Urea Nitrogen (BUN),16,mg/dL,7 - 20,
+Jordan Rivera,1994-03-12,F,Comprehensive Metabolic Panel,Creatinine,0.9,mg/dL,0.6 - 1.3,
+Jordan Rivera,1994-03-12,F,Comprehensive Metabolic Panel,Sodium,139,mmol/L,136 - 145,
+Jordan Rivera,1994-03-12,F,Comprehensive Metabolic Panel,Potassium,3.3,mmol/L,3.5 - 5.1,LOW
+Jordan Rivera,1994-03-12,F,Comprehensive Metabolic Panel,Chloride,101,mmol/L,98 - 107,
+Jordan Rivera,1994-03-12,F,Comprehensive Metabolic Panel,"Calcium, Total",8.4,mg/dL,8.6 - 10.2,LOW
+Jordan Rivera,1994-03-12,F,Comprehensive Metabolic Panel,Albumin,4.1,g/dL,3.5 - 5.0,
+Jordan Rivera,1994-03-12,F,Comprehensive Metabolic Panel,Total Bilirubin,0.7,mg/dL,0.1 - 1.2,
+Jordan Rivera,1994-03-12,F,Lipid Panel,Total Cholesterol,214,mg/dL,< 200,HIGH
+Jordan Rivera,1994-03-12,F,Lipid Panel,LDL Cholesterol - Calculated,142,mg/dL,< 100,HIGH
+Jordan Rivera,1994-03-12,F,Lipid Panel,HDL Cholesterol,46,mg/dL,> 40,
+Jordan Rivera,1994-03-12,F,Lipid Panel,Triglycerides,168,mg/dL,< 150,HIGH
+Jordan Rivera,1994-03-12,F,Complete Blood Count (CBC),White Blood Cells,7.2,K/uL,4.0 - 11.0,
+Jordan Rivera,1994-03-12,F,Complete Blood Count (CBC),Red Blood Cells,4.6,M/uL,4.2 - 5.4,
+Jordan Rivera,1994-03-12,F,Complete Blood Count (CBC),Hemoglobin,13.1,g/dL,12.0 - 15.5,
+Jordan Rivera,1994-03-12,F,Complete Blood Count (CBC),Hematocrit,39.8,%,36.0 - 46.0,
+Jordan Rivera,1994-03-12,F,Complete Blood Count (CBC),Platelet Count,410,K/uL,150 - 400,HIGH
+Jordan Rivera,1994-03-12,F,Diabetes Panel,Hemoglobin A1c,6.4,%,< 5.7,HIGH
