@@ -73,6 +73,20 @@ html, body, .stApp {
   background: linear-gradient(180deg, #eef5fa 0%, #f5f8fb 180px, #f5f8fb 100%);
 }
 
+/* Faint diagonal watermark across the whole app. Fixed + pointer-events:
+   none so it never blocks clicks or scrolling; low opacity so it reads as
+   a subtle texture rather than competing with real content. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.05;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='340'%20height='170'%3E%3Ctext%20x='10'%20y='100'%20font-family='Times%20New%20Roman,serif'%20font-size='24'%20fill='%232c4a63'%20transform='rotate(-28%20170%2085)'%3EZiqi%20(Ankit)%20Cao%3C/text%3E%3C/svg%3E");
+}
+
 p, label, li, .stMarkdown, .stCaption, .stText,
 [data-testid="stMarkdownContainer"] p,
 [data-testid="stCaptionContainer"],
@@ -131,11 +145,17 @@ p, label, li, .stMarkdown, .stCaption, .stText,
   padding: 0.6rem 1.2rem !important;
 }
 
+[data-testid="stSelectbox"] [data-baseweb="select"] > div:first-child {
+  min-height: 3rem !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
 [data-testid="stSelectbox"] [data-baseweb="select"],
 [data-baseweb="popover"] [role="option"],
 [data-baseweb="menu"] [role="option"],
 ul[data-baseweb="menu"] li {
-  font-size: 2rem !important;
+  font-size: 1.35rem !important;
 }
 
 /* Sidebar collapse/expand arrow -- make it as visible as the rest of the
