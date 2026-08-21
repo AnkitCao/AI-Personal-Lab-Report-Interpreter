@@ -193,6 +193,8 @@ p, label, li, .stMarkdown, .stCaption, .stText,
 
 [data-testid="stFileUploaderDropzoneInstructions"] span {
   line-height: 1.1 !important;
+  font-size: 1.3rem !important;
+  font-weight: 400 !important;
 }
 
 [data-testid="stFileUploaderDropzoneInstructions"]::before {
